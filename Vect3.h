@@ -18,6 +18,8 @@ public:
 	inline T getYValue() const; 
 	inline T getZValue() const;
 
+	inline const T dotProduct(const Vec3<T>& v) const;
+
 };
 
 template <class T>
@@ -49,5 +51,12 @@ inline T Vec3<T>::getYValue() const { return this->y; }
 
 template <class T>
 inline T Vec3<T>::getZValue() const { return this->z; }
+
+template <class T>
+inline const T Vec3<T>::dotProduct(const Vec3<T>& v) const {
+	return this->x * v.getXValue() 
+		 + this->y * v.getYValue() 
+		 + this->z * v.getZValue();
+}
 
 #endif //_Vec3_

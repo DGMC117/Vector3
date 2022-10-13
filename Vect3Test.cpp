@@ -29,5 +29,11 @@ int main() {
 		assert(3 == v2.getZValue());
 	}
 
+	{ // Dot product
+		Vec3<double> v1(2, 2, 2);
+		Vec3<double> v2(1, 2, 3);
+		assert(12 == v1.dotProduct(v2));
+	}
+
 	cout << __FILE__ << " passed" << endl;
 }
