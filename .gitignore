@@ -3,3 +3,8 @@
 ################################################################################
 
 /Debug
+/.vs
+/Vector3.sln
+/Vector3.vcxproj.user
+/Vector3.vcxproj.filters
+/Vector3.vcxproj
