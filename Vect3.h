@@ -19,6 +19,7 @@ public:
 	inline T getZValue() const;
 
 	inline const T dotProduct(const Vec3<T>& v) const;
+	inline const T getMagnitude() const;
 
 };
 
@@ -57,6 +58,11 @@ inline const T Vec3<T>::dotProduct(const Vec3<T>& v) const {
 	return this->x * v.getXValue() 
 		 + this->y * v.getYValue() 
 		 + this->z * v.getZValue();
+}
+
+template <class T>
+inline const T Vec3<T>::getMagnitude() const {
+	return abs(sqrt(dotProduct(*this)));
 }
 
 #endif //_Vec3_

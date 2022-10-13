@@ -35,5 +35,10 @@ int main() {
 		assert(12 == v1.dotProduct(v2));
 	}
 
+	{ // Get magnitude
+		Vec3<double> v(-1, 0, 0);
+		assert(1 == v.getMagnitude());
+	}
+
 	cout << __FILE__ << " passed" << endl;
 }
