@@ -40,5 +40,13 @@ int main() {
 		assert(1 == v.getMagnitude());
 	}
 
+	{ // Normalize
+		Vec3<double> v1(4, 0, 0);
+		Vec3<double> v2 = v1.normalize();
+		assert(1 == v2.getXValue());
+		assert(0 == v2.getYValue());
+		assert(0 == v2.getZValue());
+	}
+
 	cout << __FILE__ << " passed" << endl;
 }

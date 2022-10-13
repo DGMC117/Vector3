@@ -20,6 +20,7 @@ public:
 
 	inline const T dotProduct(const Vec3<T>& v) const;
 	inline const T getMagnitude() const;
+	Vec3<T>& normalize();
 
 };
 
@@ -63,6 +64,17 @@ inline const T Vec3<T>::dotProduct(const Vec3<T>& v) const {
 template <class T>
 inline const T Vec3<T>::getMagnitude() const {
 	return abs(sqrt(dotProduct(*this)));
+}
+
+template <class T>
+Vec3<T>& Vec3<T>::normalize() {
+	T magnitude = getMagnitude();
+	if (magnitude) {
+		this->x /= magnitude;
+		this->y /= magnitude;
+		this->z /= magnitude;
+	}
+	return *this;
 }
 
 #endif //_Vec3_
