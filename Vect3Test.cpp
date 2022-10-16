@@ -54,5 +54,14 @@ int main() {
 		assert(2 == v1.distanceTo(v2));
 	}
 
+	{ // Cross product
+		Vec3<double> v1(2, 3, 4);
+		Vec3<double> v2(5, 6, 7);
+		Vec3<double> v3 = v1.crossProduct(v2);
+		assert(-3 == v3.getXValue());
+		assert(6 == v3.getYValue());
+		assert(-3 == v3.getZValue());
+	}
+
 	cout << __FILE__ << " passed" << endl;
 }
