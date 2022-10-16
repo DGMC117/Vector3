@@ -63,5 +63,11 @@ int main() {
 		assert(-3 == v3.getZValue());
 	}
 
+	{ // Angle between
+		Vec3<double> v1(1, 0, 0);
+		Vec3<double> v2(5, 0, 0);
+		assert(0 == v1.angleBetween(v2));
+	}
+
 	cout << __FILE__ << " passed" << endl;
 }

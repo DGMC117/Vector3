@@ -25,6 +25,7 @@ public:
 	Vec3<T>& normalize();
 	inline const T distanceTo(const Vec3<T>& v) const;
 	inline const Vec3<T> crossProduct(const Vec3<T>& v) const;
+	inline const T angleBetween(const Vec3<T>& v) const;
 
 };
 
@@ -93,6 +94,11 @@ inline const Vec3<T> Vec3<T>::crossProduct(const Vec3<T>& v) const {
 	return Vec3<T>(this->y * v.getZValue() - this->z * v.getYValue(),
 		this->z * v.getXValue() - this->x * v.getZValue(),
 		this->x * v.getYValue() - this->y * v.getXValue());
+}
+
+template <class T>
+inline const T Vec3<T>::angleBetween(const Vec3<T>& v) const {
+	return acos(dotProduct(v) / (getMagnitude() * v.getMagnitude()));
 }
 
 #endif //_Vec3_
