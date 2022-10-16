@@ -48,5 +48,11 @@ int main() {
 		assert(0 == v2.getZValue());
 	}
 
+	{ // Distance to
+		Vec3<double> v1(1, 0, 0);
+		Vec3<double> v2(1, 2, 0);
+		assert(2 == v1.distanceTo(v2));
+	}
+
 	cout << __FILE__ << " passed" << endl;
 }
