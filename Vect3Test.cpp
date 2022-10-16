@@ -69,5 +69,23 @@ int main() {
 		assert(0 == v1.angleBetween(v2));
 	}
 
+	{ // Operator +
+		Vec3<double> v1(1, 2, 3);
+		Vec3<double> v2(3, 2, 1);
+		Vec3<double> v3 = v1 + v2;
+		assert(4 == v3.getXValue());
+		assert(4 == v3.getYValue());
+		assert(4 == v3.getZValue());
+	}
+
+	{ // Operator -
+		Vec3<double> v1(1, 2, 3);
+		Vec3<double> v2(3, 2, 1);
+		Vec3<double> v3 = v1 - v2;
+		assert(-2 == v3.getXValue());
+		assert(0 == v3.getYValue());
+		assert(2 == v3.getZValue());
+	}
+
 	cout << __FILE__ << " passed" << endl;
 }

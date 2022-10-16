@@ -27,6 +27,9 @@ public:
 	inline const Vec3<T> crossProduct(const Vec3<T>& v) const;
 	inline const T angleBetween(const Vec3<T>& v) const;
 
+	inline const Vec3<T> operator+(const Vec3<T>& v) const;
+	inline const Vec3<T> operator-(const Vec3<T>& v) const;
+
 };
 
 template <class T>
@@ -99,6 +102,20 @@ inline const Vec3<T> Vec3<T>::crossProduct(const Vec3<T>& v) const {
 template <class T>
 inline const T Vec3<T>::angleBetween(const Vec3<T>& v) const {
 	return acos(dotProduct(v) / (getMagnitude() * v.getMagnitude()));
+}
+
+template <class T>
+inline const Vec3<T> Vec3<T>::operator+(const Vec3<T>& v) const {
+	return Vec3<T>(this->x + v.getXValue(),
+		this->y + v.getYValue(),
+		this->z + v.getZValue());
+}
+
+template <class T>
+inline const Vec3<T> Vec3<T>::operator-(const Vec3<T>& v) const {
+	return Vec3<T>(this->x - v.getXValue(),
+		this->y - v.getYValue(),
+		this->z - v.getZValue());
 }
 
 #endif //_Vec3_
