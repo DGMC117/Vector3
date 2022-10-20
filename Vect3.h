@@ -20,15 +20,15 @@ public:
 	inline T getYValue() const; 
 	inline T getZValue() const;
 
-	inline const T dotProduct(const Vec3<T>& v) const;
-	inline const T getMagnitude() const;
+	const T dotProduct(const Vec3<T>& v) const;
+	const T getMagnitude() const;
 	Vec3<T>& normalize();
-	inline const T distanceTo(const Vec3<T>& v) const;
-	inline const Vec3<T> crossProduct(const Vec3<T>& v) const;
-	inline const T angleBetween(const Vec3<T>& v) const;
+	const T distanceTo(const Vec3<T>& v) const;
+	const Vec3<T> crossProduct(const Vec3<T>& v) const;
+	const T angleBetween(const Vec3<T>& v) const;
 
-	inline const Vec3<T> operator+(const Vec3<T>& v) const;
-	inline const Vec3<T> operator-(const Vec3<T>& v) const;
+	const Vec3<T> operator+(const Vec3<T>& v) const;
+	const Vec3<T> operator-(const Vec3<T>& v) const;
 
 };
 
@@ -63,14 +63,14 @@ template <class T>
 inline T Vec3<T>::getZValue() const { return this->z; }
 
 template <class T>
-inline const T Vec3<T>::dotProduct(const Vec3<T>& v) const {
+const T Vec3<T>::dotProduct(const Vec3<T>& v) const {
 	return this->x * v.getXValue() 
 		 + this->y * v.getYValue() 
 		 + this->z * v.getZValue();
 }
 
 template <class T>
-inline const T Vec3<T>::getMagnitude() const {
+const T Vec3<T>::getMagnitude() const {
 	return abs(sqrt(dotProduct(*this)));
 }
 
@@ -86,33 +86,33 @@ Vec3<T>& Vec3<T>::normalize() {
 }
 
 template <class T>
-inline const T Vec3<T>::distanceTo(const Vec3<T>& v) const {
+const T Vec3<T>::distanceTo(const Vec3<T>& v) const {
 	return sqrt(pow(v.getXValue() - this->x, 2)
 		+ pow(v.getYValue() - this->y, 2)
 		+ pow(v.getZValue() - this->z, 2));
 }
 
 template <class T>
-inline const Vec3<T> Vec3<T>::crossProduct(const Vec3<T>& v) const {
+const Vec3<T> Vec3<T>::crossProduct(const Vec3<T>& v) const {
 	return Vec3<T>(this->y * v.getZValue() - this->z * v.getYValue(),
 		this->z * v.getXValue() - this->x * v.getZValue(),
 		this->x * v.getYValue() - this->y * v.getXValue());
 }
 
 template <class T>
-inline const T Vec3<T>::angleBetween(const Vec3<T>& v) const {
+const T Vec3<T>::angleBetween(const Vec3<T>& v) const {
 	return acos(dotProduct(v) / (getMagnitude() * v.getMagnitude()));
 }
 
 template <class T>
-inline const Vec3<T> Vec3<T>::operator+(const Vec3<T>& v) const {
+const Vec3<T> Vec3<T>::operator+(const Vec3<T>& v) const {
 	return Vec3<T>(this->x + v.getXValue(),
 		this->y + v.getYValue(),
 		this->z + v.getZValue());
 }
 
 template <class T>
-inline const Vec3<T> Vec3<T>::operator-(const Vec3<T>& v) const {
+const Vec3<T> Vec3<T>::operator-(const Vec3<T>& v) const {
 	return Vec3<T>(this->x - v.getXValue(),
 		this->y - v.getYValue(),
 		this->z - v.getZValue());
